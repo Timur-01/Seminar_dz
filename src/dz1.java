@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class dz1 {
     public static void main(String[] args) {
-        Random rand = new Random();
-        int i = rand.nextInt(2000);
+        Random random = new Random();
+        int i = random.nextInt(2000);
         System.out.println("Случайное число i =  " + i);
 
         int n = Integer.toBinaryString(i).length()-1;
