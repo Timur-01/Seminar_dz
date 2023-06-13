@@ -12,7 +12,7 @@ public class dz1 {
         int n = Integer.toBinaryString(i).length()-1;
         System.out.println("Номер старшего значения бита n =  "+n);
 
-
+//
         short count = 0;
         for (int j = i; j < Short.MAX_VALUE; j++){
             if ( j % n == 0) {
