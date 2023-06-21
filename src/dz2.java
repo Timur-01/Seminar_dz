@@ -6,35 +6,35 @@
 Если значение null, то параметр не должен попадать в запрос.
 Параметры для фильтрации: {"name":"Ivanov", "country":"Russia", "city":"Moscow", "age":"null"} */
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        String s = ("{\"name\":\"Ivanov\"," +
-                " \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}");
+            String s = ("{\"name\":\"Ivanov\"," +
+                    " \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}");
 
-        String line = s.replace("{", "").replace("}", "").replace("\"", "");
-        System.out.println(line);
+            String line = s.replace("{", "").replace("}", "").replace("\"", "");
+            System.out.println(line);
 
-        StringBuilder result = new StringBuilder("select * from students where ");
+            StringBuilder result = new StringBuilder("select * from students where ");
 
-        String [] arrayData = line3.split(", ");
-        for (int i =0; i < arrayData.length; i++) {
-            String[] arrData = arrayData[i].split(":");
-            if (arrData[1].equals("null") == false) {
-                if (i != 0) {
-                    result.append(", ");
-                    result.append(arrData[0]);
-                    result.append(" = ");
-                    result.append(arrData[1]);
-                } else {
-                    result.append(arrData[0]);
-                    result.append(" = ");
-                    result.append(arrData[1]);
+            String[] arrayData = line.split(", ");
+            for (int i = 0; i < arrayData.length; i++) {
+                String[] arrData = arrayData[i].split(":");
+                if (arrData[1].equals("null") == false) {
+                    if (i != 0) {
+                        result.append(", ");
+                        result.append(arrData[0]);
+                        result.append(" = ");
+                        result.append(arrData[1]);
+                    } else {
+                        result.append(arrData[0]);
+                        result.append(" = ");
+                        result.append(arrData[1]);
+                    }
+
                 }
-
             }
+            System.out.println(result);
         }
-        System.out.println(result);
-    }
 
 
 /* Дана json строка (можно сохранить в файл и читать из файла)
