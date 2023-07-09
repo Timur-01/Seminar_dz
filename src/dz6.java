@@ -17,7 +17,7 @@ public class dz6 {
         myHS.add(7);
         System.out.println(x.del(9));
         System.out.println(x.del(10));
-        System.out.println(x.isEmpty());
+        System.out.println(x.size());
         System.out.println(x.contains(0));
         x.add(20);
         System.out.println(x.get(1));
@@ -36,18 +36,14 @@ class MySet{
     public boolean add(int elem) {
         return values.put(elem,X) == null;
     }
-
     public boolean del(int elem){
         return values.remove(elem)==X;
     }
-    public boolean isEmpty(){
-        return values.size()==0;
-    }
-
+    public boolean isEmpty(){ return values.isEmpty();  }
+    public boolean size(){ return values.size()==0;  }
     public boolean contains(int elem){
         return values.containsKey(elem);
     }
-
     public int get(int index){
         Object[] a = values.keySet().toArray();
         return (int) a[index];
